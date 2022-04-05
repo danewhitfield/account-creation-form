@@ -66,13 +66,14 @@ body {
 }
 
 #signup-submit.signup_input {
-  background-color: rgb(61, 61, 61);
+  background-color: #71c074;
   border-style: none;
   color: #fff;
-  width: 100px;
+  width: 130px;
+  height: 40px;
   padding: 8px;
   border-radius: 6px;
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;

@@ -24,9 +24,6 @@ const avatar = document.getElementById("signup-avatar");
 const invalidAvatar = document.getElementById("invalid-avatar");
 let isAvatarValid;
 
-// const submitBtn = document.getElementById("singup-submit");
-// submitBtn.innerText = "SUBMIT";
-
 const nameRegex = /^[a-zA-Z]+$/;
 const userNameRegex = /^\w+$/;
 const emailRegex =
@@ -48,14 +45,14 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-const validator = (el, pTag, isValid) => {
+const validator = (el, pTag, isValid, regex) => {
   el.addEventListener("keyup", (e) => {
-    const lastname = e.target.value;
-    if (lastname.length === 0) {
+    const thing = e.target.value;
+    if (thing.length === 0) {
       //   el.classList.remove("invalid-input");
       //   el.classList.remove("valid-input");
       pTag.innerText = "";
-    } else if (!nameRegex.test(lastname)) {
+    } else if (!regex.test(thing)) {
       pTag.innerText = "❌";
       setTimeout(() => {
         pTag.innerText = "";
@@ -71,9 +68,9 @@ const validator = (el, pTag, isValid) => {
     }
   });
 };
-validator(signupFirstname, invalidFirstname, isFirstnameValid);
-validator(signupLastname, invalidLastname, isLastnameValid);
-validator(signupUsername, invalidUsername, isUsernameValid);
-validator(emailAddress, invalidEmail, isEmailValid);
-validator(password, invalidPassword, isPasswordValid);
+validator(signupFirstname, invalidFirstname, isFirstnameValid, nameRegex);
+validator(signupLastname, invalidLastname, isLastnameValid, nameRegex);
+validator(signupUsername, invalidUsername, isUsernameValid, userNameRegex);
+validator(emailAddress, invalidEmail, isEmailValid, emailRegex);
+validator(password, invalidPassword, isPasswordValid, passwordRegex);
 validator(avatar, invalidAvatar, isAvatarValid);
