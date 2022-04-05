@@ -12,40 +12,47 @@
   <body>
     <form id="signup-form" method="GET" action="/profile.html">
       <h1 class="title">Create Account</h1>
-      <div>
-      <label for="singup-firstname">First Name</label>
-      <input name="firstname" class="signup_input" id="signup-firstname" type="text" placeholder="John Doe"  required/>
+    <div class="input-area">
+      <label for="singup-firstname"><span class="content-name">First Name</span></label>
+      <input name="firstname" class="signup_input" id="signup-firstname" type="text" placeholder="John"  required/>
+      <p id="invalid-firstname"></p>
     </div>
-    <p id="invalid-firstname"></p>
-    <div>
+    
+    <div class="input-area">
       <label for="singup-lastname">Last Name</label>
-      <input name="lastname" class="signup_input" id="signup-lastname" type="text"  required/>
+      <input name="lastname" class="signup_input" id="signup-lastname" type="text" placeholder="Doe" required/>
+      <p id="invalid-lastname"></p>
     </div>
-    <p id="invalid-lastname"></p>
-    <div>
+
+    <div class="input-area">
       <label for="signup-username">Username</label>
-      <input name="username" class="signup_input" id="signup-username" type="text" required />
+      <input name="username" class="signup_input" id="signup-username" type="text" placeholder="JohnDoe96" required />
+      <p id="invalid-username"></p>
     </div>
-    <p id="invalid-username"></p>
-    <div>
+    
+    <div class="input-area">
       <label for="signup-email">Email Address</label>
-      <input name="email" class="signup_input" id="signup-email" type="email" required />
+      <input name="email" class="signup_input" id="signup-email" type="email" placeholder="johndoe96@example.com" required />
+      <p id="invalid-email"></p>
     </div>
-    <p id="invalid-email"></p>
-    <div>
+    
+    <div class="input-area">
       <label for="signup-password">Password</label>
       <input name="password"
         class="signup_input"
         id="signup-password"
         type="password"
+        placeholder="password123"
         required
       />
+      <p id="invalid-password"></p>
     </div>
-    <p id="invalid-password"></p>
 
-      <label for="signup-avatar">Upload Avatar Image</label>
-      <input name="avatar" class="signup_input avatar-input" id="signup-avatar" type="file" accept="image/*" />
-      <p id="invalid-avatar"></p>
+      <span class="avatar-el">
+        <label for="signup-avatar">Upload Avatar Image</label>
+        <input name="avatar" class="signup_input avatar-input" id="signup-avatar" type="file" accept="image/*" />
+        <p id="invalid-avatar"></p>
+      </span>
 
       <label for="signup-submit"></label>
       <input name="submit" class="signup_input" id="signup-submit" type="submit" />

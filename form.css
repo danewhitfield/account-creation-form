@@ -8,18 +8,22 @@
 .title {
   font-family: sans-serif;
   margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 0rem;
+  position: relative;
 }
 
-div {
+.input-area {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 300px;
+  grid-template-columns: 2fr 2fr 1fr;
+  width: 400px;
+  margin-top: 10px;
 }
 
 form {
-  border-radius: 8px;
-  padding: 50px;
-  box-shadow: 15px 10px 30px rgba(0, 0, 0, 0.401);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.233);
   background: rgb(29, 29, 29);
   color: #fff;
   width: 500px;
@@ -31,13 +35,16 @@ form {
 
 input,
 label {
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 input {
-  background: rgb(49, 49, 49);
+  background: rgb(41, 41, 41);
+  color: #fff;
   border-style: none;
   border-bottom: 1px solid white;
+  border-radius: 4px;
+  padding: 1px 4px;
 }
 
 body {
@@ -47,7 +54,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: rgb(51, 51, 51);
+  background: rgb(36, 36, 36);
 }
 
 .invalid-input {
@@ -74,9 +81,35 @@ body {
 
 p {
   margin: 5px;
-  text-align: center;
+  margin-left: 10px;
 }
 
 input > .avatar-input {
   margin-top: 5px;
+}
+
+.avatar-el {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 400px;
+}
+
+.title::before {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  bottom: -25px;
+  margin-bottom: 20px;
+  transition: width 0.25s ease-out;
+}
+
+.title:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
 }
