@@ -10,20 +10,29 @@
 </head>
 <body>
   <body>
-    <h1 class="title">Create Account</h1>
     <form id="signup-form" method="GET" action="/profile.html">
+      <h1 class="title">Create Account</h1>
+      <div>
       <label for="singup-firstname">First Name</label>
       <input class="signup_input" id="signup-firstname" type="text"  required/>
       <p id="invalid-firstname"></p>
+    </div>
+    <div>
       <label for="singup-lastname">Last Name</label>
       <input class="signup_input" id="signup-lastname" type="text"  required/>
       <p id="invalid-lastname"></p>
+    </div>
+    <div>
       <label for="signup-username">Username</label>
       <input class="signup_input" id="signup-username" type="text" required />
       <p id="invalid-username"></p>
+    </div>
+    <div>
       <label for="signup-email">Email Address</label>
       <input class="signup_input" id="signup-email" type="email" required />
       <p id="invalid-email"></p>
+    </div>
+    <div>
       <label for="signup-password">Password</label>
       <input
         class="signup_input"
@@ -32,12 +41,17 @@
         required
       />
       <p id="invalid-password"></p>
+    </div>
+    <div>
       <label for="signup-avatar">Upload Avatar Image</label>
       <input class="signup_input" id="signup-avatar" type="file" accept="image/*" />
       <p id="invalid-avatar"></p>
+    </div>
+    <div>
       <label for="signup-submit"></label>
       <input class="signup_input" id="signup-submit" type="submit"  />
       <p class="invalid"></p>
+      </div>
     </form>
 </body>
 </html>
