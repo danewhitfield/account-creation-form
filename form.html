@@ -14,44 +14,41 @@
       <h1 class="title">Create Account</h1>
       <div>
       <label for="singup-firstname">First Name</label>
-      <input class="signup_input" id="signup-firstname" type="text"  required/>
-      <p id="invalid-firstname"></p>
+      <input name="firstname" class="signup_input" id="signup-firstname" type="text" placeholder="John Doe"  required/>
     </div>
+    <p id="invalid-firstname"></p>
     <div>
       <label for="singup-lastname">Last Name</label>
-      <input class="signup_input" id="signup-lastname" type="text"  required/>
-      <p id="invalid-lastname"></p>
+      <input name="lastname" class="signup_input" id="signup-lastname" type="text"  required/>
     </div>
+    <p id="invalid-lastname"></p>
     <div>
       <label for="signup-username">Username</label>
-      <input class="signup_input" id="signup-username" type="text" required />
-      <p id="invalid-username"></p>
+      <input name="username" class="signup_input" id="signup-username" type="text" required />
     </div>
+    <p id="invalid-username"></p>
     <div>
       <label for="signup-email">Email Address</label>
-      <input class="signup_input" id="signup-email" type="email" required />
-      <p id="invalid-email"></p>
+      <input name="email" class="signup_input" id="signup-email" type="email" required />
     </div>
+    <p id="invalid-email"></p>
     <div>
       <label for="signup-password">Password</label>
-      <input
+      <input name="password"
         class="signup_input"
         id="signup-password"
         type="password"
         required
       />
-      <p id="invalid-password"></p>
     </div>
-    <div>
+    <p id="invalid-password"></p>
+
       <label for="signup-avatar">Upload Avatar Image</label>
-      <input class="signup_input" id="signup-avatar" type="file" accept="image/*" />
+      <input name="avatar" class="signup_input avatar-input" id="signup-avatar" type="file" accept="image/*" />
       <p id="invalid-avatar"></p>
-    </div>
-    <div>
+
       <label for="signup-submit"></label>
-      <input class="signup_input" id="signup-submit" type="submit"  />
-      <p class="invalid"></p>
-      </div>
+      <input name="submit" class="signup_input" id="signup-submit" type="submit" />
     </form>
 </body>
 </html>
