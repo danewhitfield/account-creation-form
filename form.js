@@ -1,24 +1,28 @@
 const form = document.getElementById("signup-form");
 
 const invalidFirstname = document.getElementById("invalid-firstname");
-const invalidLastname = document.getElementById('invalid-lastname');
+const invalidLastname = document.getElementById("invalid-lastname");
 
 const signupFirstname = document.getElementById("signup-firstname");
-const signupLastname = document.getElementById('signup-lastname');
+const signupLastname = document.getElementById("signup-lastname");
 
-const signupUsername = document.getElementById('signup-username');
-const invalidUsername = document.getElementById('invalid-username');
+const signupUsername = document.getElementById("signup-username");
+const invalidUsername = document.getElementById("invalid-username");
 
-const emailAddress = document.getElementById('signup-email');
-const invalidEmail = document.getElementById('invalid-email');
+const emailAddress = document.getElementById("signup-email");
+const invalidEmail = document.getElementById("invalid-email");
 
+const password = document.getElementById("signup-password");
+const invalidPassword = document.getElementById("invalid-password");
 
-
-
+const avatar = document.getElementById("signup-avatar");
+const invalidAvatar = document.getElementById("invalid-avatar");
 
 const nameRegex = /^[a-zA-Z]+$/;
 const userNameRegex = /^\w+$/;
-const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailRegex =
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -47,6 +51,7 @@ signupLastname.addEventListener("keyup", (e) => {
     invalidLastname.innerText = "Last name can only contain letters";
     signupLastname.classList.add("invalid-input");
     signupLastname.classList.remove("valid-input");
+    e.preventDefault();
   } else {
     signupLastname.classList.add("valid-input");
     signupLastname.classList.remove("invalid-input");
@@ -56,9 +61,11 @@ signupLastname.addEventListener("keyup", (e) => {
 signupUsername.addEventListener("keyup", (e) => {
   const username = e.target.value;
   if (!userNameRegex.test(username)) {
-    invalidUsername.innerText = "User name can only contain letters, numbers and underscores.";
+    invalidUsername.innerText =
+      "User name can only contain letters, numbers and underscores.";
     signupUsername.classList.add("invalid-input");
     signupUsername.classList.remove("valid-input");
+    e.preventDefault();
   } else {
     signupUsername.classList.add("valid-input");
     signupUsername.classList.remove("invalid-input");
@@ -71,8 +78,39 @@ emailAddress.addEventListener("keyup", (e) => {
     invalidEmail.innerText = "Please add valid email address";
     emailAddress.classList.add("invalid-input");
     emailAddress.classList.remove("valid-input");
+    e.preventDefault();
   } else {
+    invalidEmail.innerText = "";
     emailAddress.classList.add("valid-input");
     emailAddress.classList.remove("invalid-input");
+  }
+});
+
+password.addEventListener("keyup", (e) => {
+  const usersPassword = e.target.value;
+  console.log("usersPassword:", usersPassword);
+  if (!passwordRegex.test(usersPassword)) {
+    invalidPassword.innerText =
+      "Password must contain at least 8 characters, at least one number and both lower and uppercase letters and special characters";
+    password.classList.add("invalid-input");
+    password.classList.remove("valid-input");
+    e.preventDefault();
+  } else {
+    invalidPassword.innerText = "";
+    password.classList.add("valid-input");
+    password.classList.remove("invalid-input");
+  }
+});
+
+const validImageType = ["png", "jpeg", "svg"];
+avatar.addEventListener("change", (e) => {
+  const fileType = e.target.value;
+  const split = fileType.split(".");
+  console.log("split:", split);
+  if (!validImageType.includes(split[1])) {
+    invalidAvatar.innerText = "Please use .png, .jpeg or .svg file types";
+    e.preventDefault();
+  } else {
+    invalidAvatar.innerText = "";
   }
 });

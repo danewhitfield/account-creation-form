@@ -19,22 +19,22 @@
       <input class="signup_input" id="signup-lastname" type="text"  required/>
       <p id="invalid-lastname"></p>
       <label for="signup-username">Username</label>
-      <input class="signup_input" id="signup-username" type="text"  />
+      <input class="signup_input" id="signup-username" type="text" required />
       <p id="invalid-username"></p>
       <label for="signup-email">Email Address</label>
-      <input class="signup_input" id="signup-email" type="email"  />
+      <input class="signup_input" id="signup-email" type="email" required />
       <p id="invalid-email"></p>
       <label for="signup-password">Password</label>
       <input
         class="signup_input"
         id="signup-password"
         type="password"
-        
+        required
       />
-      <p class="invalid"></p>
+      <p id="invalid-password"></p>
       <label for="signup-avatar">Upload Avatar Image</label>
-      <input class="signup_input" id="signup-avatar" type="file" />
-      <p class="invalid"></p>
+      <input class="signup_input" id="signup-avatar" type="file" accept="image/*" />
+      <p id="invalid-avatar"></p>
       <label for="signup-submit"></label>
       <input class="signup_input" id="signup-submit" type="submit"  />
       <p class="invalid"></p>
