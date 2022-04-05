@@ -13,18 +13,18 @@
     <h1 class="title">Create Account</h1>
     <form id="signup-form" method="GET" action="/profile.html">
       <label for="singup-firstname">First Name</label>
-      <input class="signup_input" id="signup-firstname" type="text"  />
-      <p class="invalid-firstname"></p>
+      <input class="signup_input" id="signup-firstname" type="text"  required/>
+      <p id="invalid-firstname"></p>
       <label for="singup-lastname">Last Name</label>
-      <input class="signup_input" id="signup-lastname" type="text"  />
-      <p class="invalid-lastname"></p>
-      <label for="singup-username">Username</label>
+      <input class="signup_input" id="signup-lastname" type="text"  required/>
+      <p id="invalid-lastname"></p>
+      <label for="signup-username">Username</label>
       <input class="signup_input" id="signup-username" type="text"  />
-      <p class="invalid"></p>
-      <label for="singup-email">Email Address</label>
+      <p id="invalid-username"></p>
+      <label for="signup-email">Email Address</label>
       <input class="signup_input" id="signup-email" type="email"  />
-      <p class="invalid"></p>
-      <label for="singup-password">Password</label>
+      <p id="invalid-email"></p>
+      <label for="signup-password">Password</label>
       <input
         class="signup_input"
         id="signup-password"
@@ -32,10 +32,10 @@
         
       />
       <p class="invalid"></p>
-      <label for="singup-avatar">Upload Avatar Image</label>
+      <label for="signup-avatar">Upload Avatar Image</label>
       <input class="signup_input" id="signup-avatar" type="file" />
       <p class="invalid"></p>
-      <label for="singup-submit"></label>
+      <label for="signup-submit"></label>
       <input class="signup_input" id="signup-submit" type="submit"  />
       <p class="invalid"></p>
     </form>
